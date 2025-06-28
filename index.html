@@ -108,6 +108,16 @@ document.head.insertAdjacentHTML('beforeend', metaTags);
             animation: spin 1s linear infinite;
             margin: 0 auto 15px;
         }
+
+        .video-preview {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+            position: absolute !important;
+        }
+        
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
